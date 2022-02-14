@@ -1,0 +1,107 @@
+.menu {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 0 17%;
+  min-height: 100px;
+  box-shadow: 0 0 24px rgba(#000, 0.3);
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  .menu_logo {
+    margin: 20px 48px 20px 0;
+  }
+  .menu_list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 48px;
+    list-style-type: none;
+    .menu_item {
+      display: flex;
+      position: relative;
+      .menu_link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #000;
+        padding-bottom: 20px;
+      }
+      .dropdown_menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        transform: translateY(20px);
+        list-style-type: none;
+        min-width: 160px;
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s linear;
+        .dropdown_item {
+          background-color: #fa2837;
+          padding: 16px 12px;
+          border-bottom: 1px solid #e21625;
+          transition: background-color 0.2s linear;
+          .dropdown_link {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+        .dropdown_item:hover {
+          background-color: #000;
+        }
+      }
+    }
+    .menu_item:hover .dropdown_menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  .menu_support {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    top: 0;
+    right: 120px;
+    background-color: #253241;
+    padding: 10px 20px;
+    .support_link,
+    .support_time {
+      font-size: 15px;
+      color: #fff;
+    }
+    .support_link {
+      text-decoration: none;
+      transition: color 0.4s linear;
+    }
+    .support_link:hover {
+      color: #ff0012;
+    }
+    .support_divide {
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+  .menu_support::after {
+    position: absolute;
+    top: 0;
+    left: -38px;
+    content: "";
+    border-style: solid;
+    border-width: 38px;
+    border-color: #253241 transparent transparent;
+    z-index: -1;
+  }
+}
+@media (max-width: 1409px) {
+  .menu {
+    padding: 0 120px;
+  }
+}
