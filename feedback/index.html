@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+      .feedback {
+        background-image: url(./images/feedback-background.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding: 120px 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+
+      .feedback .feedback-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 30px;
+        width: 1170px;
+      }
+
+      .feedback .feedback-container .feedback-dots {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .feedback .feedback-container .feedback-dots .feedback-dot {
+        min-width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #845b00;
+        opacity: 0.5;
+        cursor: pointer;
+      }
+
+      .feedback .feedback-container .feedback-dots .feedback-dot:hover {
+        opacity: 1;
+      }
+
+      .feedback .feedback-container .feedback-dots .feedback-dot-active {
+        opacity: 1;
+      }
+
+      .feedback .feedback-container .feedback-wrapper {
+        max-width: 1170px;
+        overflow: hidden;
+      }
+
+      .feedback .feedback-container .feedback-wrapper .feedback-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-transition: all 0.8s;
+        transition: all 0.8s;
+      }
+
+      .feedback
+        .feedback-container
+        .feedback-wrapper
+        .feedback-list
+        .feedback-item {
+        min-width: 1170px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .feedback
+        .feedback-container
+        .feedback-wrapper
+        .feedback-list
+        .feedback-item
+        .feedback-content {
+        font-family: "Montserrat", sans-serif;
+        color: #151515;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 34px;
+        margin: 0;
+        width: 70%;
+        text-align: center;
+        position: relative;
+      }
+
+      .feedback
+        .feedback-container
+        .feedback-wrapper
+        .feedback-list
+        .feedback-item
+        .feedback-content::before {
+        content: "";
+        background-image: url(./images/feedback-quotes.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        opacity: 0.1;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        top: -36px;
+        left: 0;
+      }
+
+      .feedback
+        .feedback-container
+        .feedback-wrapper
+        .feedback-list
+        .feedback-item
+        .feedback-guest {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .feedback
+        .feedback-container
+        .feedback-wrapper
+        .feedback-list
+        .feedback-item
+        .feedback-guest
+        .guest-avatar {
+        width: 65px;
+        height: 65px;
+      }
+
+      .feedback
+        .feedback-container
+        .feedback-wrapper
+        .feedback-list
+        .feedback-item
+        .feedback-guest
+        .guest-info {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .feedback
+        .feedback-container
+        .feedback-wrapper
+        .feedback-list
+        .feedback-item
+        .feedback-guest
+        .guest-info
+        .guest-name {
+        font-family: "Montserrat", sans-serif;
+        color: #845b00;
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: capitalize;
+      }
+
+      .feedback
+        .feedback-container
+        .feedback-wrapper
+        .feedback-list
+        .feedback-item
+        .feedback-guest
+        .guest-info
+        .guest-job {
+        font-family: "Montserrat", sans-serif;
+        color: #845b00;
+        font-weight: 400;
+        font-size: 16px;
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="feedback">
+      <div class="feedback-container">
+        <div class="feedback-dots">
+          <span class="feedback-dot feedback-dot-active"></span>
+          <span class="feedback-dot"></span>
+          <span class="feedback-dot"></span>
+        </div>
+        <div class="feedback-wrapper">
+          <div class="feedback-list">
+            <div class="feedback-item">
+              <p class="feedback-content">
+                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                consectetur, adipisci velit, sed quia non numquam mod tempora
+                incidunt ut labore et dolore magnam aliquam
+              </p>
+              <div class="feedback-guest">
+                <img
+                  class="guest-avatar"
+                  src="./images/feedback-avatar-1.jpg"
+                  alt=""
+                />
+                <div class="guest-info">
+                  <span class="guest-name">Laura Addams</span>
+                  <span class="guest-job">Bank Director</span>
+                </div>
+              </div>
+            </div>
+            <div class="feedback-item">
+              <p class="feedback-content">
+                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                consectetur, adipisci velit, sed quia non numquam mod tempora
+                incidunt ut labore et dolore magnam aliquam
+              </p>
+              <div class="feedback-guest">
+                <img
+                  class="guest-avatar"
+                  src="./images/feedback-avatar-2.jpg"
+                  alt=""
+                />
+                <div class="guest-info">
+                  <span class="guest-name">Math Addams</span>
+                  <span class="guest-job">Lawyer</span>
+                </div>
+              </div>
+            </div>
+            <div class="feedback-item">
+              <p class="feedback-content">
+                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                consectetur, adipisci velit, sed quia non numquam mod tempora
+                incidunt ut labore et dolore magnam aliquam
+              </p>
+              <div class="feedback-guest">
+                <img
+                  class="guest-avatar"
+                  src="./images/feedback-avatar-3.jpg"
+                  alt=""
+                />
+                <div class="guest-info">
+                  <span class="guest-name">James Oliver</span>
+                  <span class="guest-job">Project Manager</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const feedbackDots = document.querySelectorAll(".feedback-dot");
+      const feedbackList = document.querySelector(".feedback-list");
+      const feedbackContainer = document.querySelector(".feedback-container");
+      let i = 0;
+      feedbackSlide = feedbackList.onclick = () => {
+        i++;
+        feedbackDotCurrent = document.querySelector(
+          ".feedback-dot.feedback-dot-active"
+        );
+        feedbackDotCurrent.classList.remove("feedback-dot-active");
+        feedbackDotNext = feedbackDotCurrent.nextElementSibling;
+        let positionX = i * -1170;
+        if (feedbackDotNext == null) {
+          i = 0;
+          feedbackDots[0].classList.add("feedback-dot-active");
+          feedbackList.removeAttribute("style");
+        } else {
+          feedbackDotNext.classList.add("feedback-dot-active");
+          feedbackList.setAttribute(
+            "style",
+            `transform: translateX(${positionX}px)`
+          );
+        }
+      };
+      feedbackAuto = setInterval(feedbackSlide, 2000);
+      feedbackContainer.onmouseover = () => {
+        clearInterval(feedbackAuto);
+        feedbackDots.forEach((feedbackDot, index) => {
+          feedbackDot.onclick = function () {
+            document
+              .querySelector(".feedback-dot.feedback-dot-active")
+              .classList.remove("feedback-dot-active");
+            this.classList.add("feedback-dot-active");
+            if (index > 0) {
+              let positionX2 = index * -1170;
+              feedbackList.setAttribute(
+                "style",
+                `transform: translateX(${positionX2}px)`
+              );
+            } else {
+              feedbackList.removeAttribute("style");
+            }
+          };
+        });
+      };
+      feedbackContainer.onmouseout = () => {
+        feedbackAuto = setInterval(feedbackSlide, 2000);
+      };
+    </script>
+  </body>
+</html>

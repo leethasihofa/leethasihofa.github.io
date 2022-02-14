@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Oswald:wght@700&display=swap");
+      .get-a-quote-numbers {
+        background-image: url(./images/number-background.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding: 120px 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+
+      .get-a-quote-numbers .get-a-quote-numbers-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 45px;
+        width: 1170px;
+      }
+
+      .get-a-quote-numbers .get-a-quote-numbers-container .get-a-quote {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 360px;
+        -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-color: #ffb716;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-header
+        .quote-img {
+        width: 90px;
+        padding: 10px 20px;
+        border-right: 1px solid #ffffff40;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-header
+        .quote-title {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        padding-left: 30px;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-form {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 30px;
+        background-color: #fff;
+        padding: 30px;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-form
+        .quote-input {
+        border: none;
+        border-bottom: 1px solid #15151530;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        color: #151515;
+        padding-bottom: 16px;
+        outline: none;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-form
+        .quote-input:focus {
+        border-color: #ffb716;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-form
+        .quote-textarea {
+        border: none;
+        border-bottom: 1px solid #15151530;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+        color: #151515;
+        height: 100px;
+        outline: none;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-form
+        .quote-textarea:focus {
+        border-color: #ffb716;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-form
+        .quote-button {
+        text-align: left;
+        padding: 15px 0 15px 50px;
+        background-color: #ffb716;
+        font-family: "Montserrat", sans-serif;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: capitalize;
+        position: relative;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-form
+        .quote-button
+        .quote-button-text {
+        position: relative;
+        z-index: 2;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-form
+        .quote-button
+        .quote-button-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background-color: #151515;
+        z-index: -1;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .get-a-quote
+        .quote-form
+        .quote-button:hover
+        .quote-button-background {
+        z-index: 1;
+        width: 100%;
+      }
+
+      .get-a-quote-numbers .get-a-quote-numbers-container .numbers {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 50px;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .numbers
+        .numbers-heading {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .numbers
+        .numbers-heading
+        .numbers-title {
+        font-family: "Oswald", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: #151515;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .numbers
+        .numbers-heading
+        .numbers-subtitle {
+        position: relative;
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        color: #999999;
+        text-transform: uppercase;
+        padding-bottom: 8px;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .numbers
+        .numbers-heading
+        .numbers-subtitle::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        height: 1px;
+        width: 200px;
+        background-color: #999999;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .numbers
+        .numbers-heading
+        .numbers-subtitle::after {
+        position: absolute;
+        left: 0;
+        bottom: -1.5px;
+        content: "";
+        height: 3px;
+        width: 100px;
+        background-color: #ffb716;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .numbers
+        .numbers-description {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        color: #999999;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .numbers
+        .numbers-count {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .numbers
+        .numbers-count
+        .count-item {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 15px;
+        padding: 30px 0;
+        background-color: #fff;
+        -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .numbers
+        .numbers-count
+        .count-item
+        .count-number {
+        font-family: "Oswald", sans-serif;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 45px;
+      }
+
+      .get-a-quote-numbers
+        .get-a-quote-numbers-container
+        .numbers
+        .numbers-count
+        .count-item
+        .count-feature {
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #999999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="get-a-quote-numbers">
+      <div class="get-a-quote-numbers-container">
+        <div class="get-a-quote">
+          <div class="quote-header">
+            <img class="quote-img" src="./images/number-worker.png" alt="" />
+            <h3 class="quote-title">Get a Quote</h3>
+          </div>
+          <form class="quote-form" action="">
+            <input class="quote-input" type="text" placeholder="Your Name" />
+            <input class="quote-input" type="text" placeholder="Your Email" />
+            <input class="quote-input" type="tel" placeholder="Telephone" />
+            <textarea
+              class="quote-textarea"
+              placeholder="Insert message"
+            ></textarea>
+            <button class="quote-button" type="submit">
+              <span class="quote-button-text">Submit quote</span>
+              <span class="quote-button-background"></span>
+            </button>
+          </form>
+        </div>
+        <div class="numbers">
+          <div class="numbers-heading">
+            <h2 class="numbers-title">Our numbers</h2>
+            <span class="numbers-subtitle">From concept to creation</span>
+          </div>
+          <p class="numbers-description">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quaed inventore veritatis et quasi architecto beatae vitae dicta
+            sunt explicabo.
+          </p>
+          <div class="numbers-count">
+            <div class="count-item">
+              <span class="count-number">244</span>
+              <span class="count-feature">Jobs Done</span>
+            </div>
+            <div class="count-item">
+              <span class="count-number">136</span>
+              <span class="count-feature">Projects</span>
+            </div>
+            <div class="count-item">
+              <span class="count-number">324</span>
+              <span class="count-feature">Projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

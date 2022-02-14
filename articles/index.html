@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/7732369a3d.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Oswald:wght@700&display=swap");
+      .articles {
+        padding: 120px 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+
+      .articles .articles-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 45px;
+        width: 1170px;
+      }
+
+      .articles .articles-container .articles-heading {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .articles .articles-container .articles-heading .articles-title {
+        font-family: "Oswald", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: #151515;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .articles .articles-container .articles-heading .articles-subtitle {
+        position: relative;
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        color: #999999;
+        text-transform: uppercase;
+        padding-bottom: 8px;
+      }
+
+      .articles
+        .articles-container
+        .articles-heading
+        .articles-subtitle::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        height: 1px;
+        width: 200px;
+        background-color: #999999;
+      }
+
+      .articles
+        .articles-container
+        .articles-heading
+        .articles-subtitle::after {
+        position: absolute;
+        left: 0;
+        bottom: -1.5px;
+        content: "";
+        height: 3px;
+        width: 100px;
+        background-color: #ffb716;
+      }
+
+      .articles .articles-container .articles-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        gap: 50px;
+      }
+
+      .articles .articles-container .articles-content .articles-single {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 735px;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-avatar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-avatar
+        .avatar-img {
+        width: 735px;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-info {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 12px;
+        margin-left: 30px;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-info
+        .articles-tag {
+        color: #999999;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-info
+        .articles-tag
+        .tag-item {
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #999999;
+        text-transform: capitalize;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-info
+        .articles-tag
+        .tag-item:hover {
+        color: #ffb716;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-info
+        .articles-time {
+        padding: 0 12px;
+        border-left: 1px solid #ffb716;
+        border-right: 1px solid #ffb716;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #999999;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-info
+        .articles-author {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #999999;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-info
+        .articles-author
+        .author-name {
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #999999;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-info
+        .articles-author
+        .author-name:hover {
+        color: #ffb716;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-single-title {
+        margin: 0 0 0 30px;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-single-title
+        .articles-single-link {
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: #151515;
+        line-height: 42px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-single-title
+        .articles-single-link:hover {
+        color: #ffb716;
+        text-decoration: underline;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-description {
+        margin: 0 0 0 30px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        color: #999999;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-button {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        margin-left: 30px;
+        text-align: left;
+        padding: 15px 45px;
+        background-color: #ffb716;
+        font-family: "Montserrat", sans-serif;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: capitalize;
+        position: relative;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-button
+        .articles-button-text {
+        position: relative;
+        z-index: 2;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-button
+        .articles-button-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background-color: #151515;
+        z-index: -1;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-single
+        .articles-button:hover
+        .articles-button-background {
+        z-index: 1;
+        width: 100%;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-list
+        .articles-list-title {
+        margin: 0 0 -20px 0;
+        font-family: "Oswald", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: #151515;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-list
+        .articles-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 15px;
+        padding: 40px 0;
+        border-bottom: 1px solid #e3e3e3;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-list
+        .articles-item
+        .articles-thumbnail {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-list
+        .articles-item
+        .articles-thumbnail
+        .articles-thumbnail-img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-list
+        .articles-item
+        .articles-thumbnail
+        .articles-thumbnail-blur {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background-color: #ffb716;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-list
+        .articles-item
+        .articles-thumbnail
+        .articles-thumbnail-blur
+        .articles-thumbnail-icon {
+        color: #fff;
+        width: 24px;
+        height: 24px;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-list
+        .articles-item
+        .articles-thumbnail:hover
+        .articles-thumbnail-blur {
+        visibility: visible;
+        opacity: 0.8;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-list
+        .articles-item
+        .articles-item-info {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-list
+        .articles-item
+        .articles-item-info
+        .articles-item-title {
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: #151515;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-list
+        .articles-item
+        .articles-item-info
+        .articles-item-title:hover {
+        text-decoration: underline;
+      }
+
+      .articles
+        .articles-container
+        .articles-content
+        .articles-list
+        .articles-item
+        .articles-item-info
+        .articles-item-time {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #999999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="articles">
+      <div class="articles-container">
+        <div class="articles-heading">
+          <h2 class="articles-title">Our articles</h2>
+          <span class="articles-subtitle">Making dreams come to life</span>
+        </div>
+        <div class="articles-content">
+          <div class="articles-single">
+            <a class="articles-avatar" href="">
+              <img
+                class="avatar-img"
+                src="./images/articles-single-img.jpg"
+                alt=""
+              />
+            </a>
+            <div class="articles-info">
+              <div class="articles-tag">
+                <a class="tag-item" href="">Factory</a>,
+                <a class="tag-item" href="">Machines</a>
+              </div>
+              <span class="articles-time">November 21, 2018</span>
+              <div class="articles-author">
+                Post By: <a class="author-name" href="">Jean Louis</a>
+              </div>
+            </div>
+            <h3 class="articles-single-title">
+              <a class="articles-single-link" href=""
+                >The mechanical performs welds metal components assisted by a
+                worker.</a
+              >
+            </h3>
+            <p class="articles-description">
+              Sed ut perspiciatis unde omnis natusvoluptatem accusantium
+              doloremque laudantium, totam rem aperiam, eaque ipsa quaed
+              veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              Sed ut perspiciatis unde omnis natusvoluptatem accusantium
+              doloremque laudantium, totam rem [...]
+            </p>
+            <a class="articles-button" href="">
+              <span class="articles-button-text">Read more</span>
+              <span class="articles-button-background"></span>
+            </a>
+          </div>
+          <div class="articles-list">
+            <h3 class="articles-list-title">Title</h3>
+            <div class="articles-item">
+              <a class="articles-thumbnail" href="">
+                <img
+                  class="articles-thumbnail-img"
+                  src="./images/articles-list-img-1.jpg"
+                  alt=""
+                />
+                <span class="articles-thumbnail-blur">
+                  <i class="articles-thumbnail-icon fa-solid fa-plus"></i>
+                </span>
+              </a>
+              <div class="articles-item-info">
+                <a class="articles-item-title" href=""
+                  >Pharmacy Industry to Help with Opioid Addiction</a
+                >
+                <span class="articles-item-time">October 16, 2019</span>
+              </div>
+            </div>
+            <div class="articles-item">
+              <a class="articles-thumbnail" href="">
+                <img
+                  class="articles-thumbnail-img"
+                  src="./images/articles-list-img-2.jpg"
+                  alt=""
+                />
+                <span class="articles-thumbnail-blur">
+                  <i class="articles-thumbnail-icon fa-solid fa-plus"></i>
+                </span>
+              </a>
+              <div class="articles-item-info">
+                <a class="articles-item-title" href=""
+                  >Morroco Shopping Center by ZIDEX Co.</a
+                >
+                <span class="articles-item-time">November 23, 2018</span>
+              </div>
+            </div>
+            <div class="articles-item">
+              <a class="articles-thumbnail" href="">
+                <img
+                  class="articles-thumbnail-img"
+                  src="./images/articles-list-img-3.jpg"
+                  alt=""
+                />
+                <span class="articles-thumbnail-blur">
+                  <i class="articles-thumbnail-icon fa-solid fa-plus"></i>
+                </span>
+              </a>
+              <div class="articles-item-info">
+                <a class="articles-item-title" href=""
+                  >Use industrial content marketing to sales
+                </a>
+                <span class="articles-item-time">November 23, 2018</span>
+              </div>
+            </div>
+            <div class="articles-item">
+              <a class="articles-thumbnail" href="">
+                <img
+                  class="articles-thumbnail-img"
+                  src="./images/articles-list-img-4.jpg"
+                  alt=""
+                />
+                <span class="articles-thumbnail-blur">
+                  <i class="articles-thumbnail-icon fa-solid fa-plus"></i>
+                </span>
+              </a>
+              <div class="articles-item-info">
+                <a class="articles-item-title" href=""
+                  >Reality Manufacturing Will Revolutionize
+                </a>
+                <span class="articles-item-time">November 23, 2018</span>
+              </div>
+            </div>
+            <div class="articles-item">
+              <a class="articles-thumbnail" href="">
+                <img
+                  class="articles-thumbnail-img"
+                  src="./images/articles-list-img-5.jpg"
+                  alt=""
+                />
+                <span class="articles-thumbnail-blur">
+                  <i class="articles-thumbnail-icon fa-solid fa-plus"></i>
+                </span>
+              </a>
+              <div class="articles-item-info">
+                <a class="articles-item-title" href=""
+                  >The First 5 Industrial Manufacturing Trends
+                </a>
+                <span class="articles-item-time">November 23, 2018</span>
+              </div>
+            </div>
+            <div class="articles-item">
+              <a class="articles-thumbnail" href="">
+                <img
+                  class="articles-thumbnail-img"
+                  src="./images/articles-list-img-6.jpg"
+                  alt=""
+                />
+                <span class="articles-thumbnail-blur">
+                  <i class="articles-thumbnail-icon fa-solid fa-plus"></i>
+                </span>
+              </a>
+              <div class="articles-item-info">
+                <a class="articles-item-title" href=""
+                  >Use industrial content marketing to sales
+                </a>
+                <span class="articles-item-time">November 23, 2018</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const articlesThumbnailBlurs = document.querySelectorAll(
+        ".articles-thumbnail-blur"
+      );
+      const articlesItemTitles = document.querySelectorAll(
+        ".articles-item-title"
+      );
+      articlesItemTitles.forEach((articlesItemTitle, i) => {
+        articlesItemTitle.onmouseover = function () {
+          const articlesThumbnailBlur = articlesThumbnailBlurs[i];
+          articlesThumbnailBlur.setAttribute(
+            "style",
+            "visibility: visible; opacity: 0.8;"
+          );
+        };
+        articlesItemTitle.onmouseout = function () {
+          const articlesThumbnailBlur = articlesThumbnailBlurs[i];
+          articlesThumbnailBlur.removeAttribute("style");
+        };
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Oswald:wght@700&display=swap");
+      .company {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 80px;
+        width: 1170px;
+        margin: 0 auto;
+      }
+
+      .company .company-heading {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .company .company-heading .company-title {
+        font-family: "Oswald", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: #151515;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .company .company-heading .company-subtitle {
+        position: relative;
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        color: #999999;
+        text-transform: uppercase;
+        padding-bottom: 8px;
+      }
+
+      .company .company-heading .company-subtitle::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        height: 1px;
+        width: 200px;
+        background-color: #999999;
+      }
+
+      .company .company-heading .company-subtitle::after {
+        position: absolute;
+        left: 0;
+        bottom: -1.5px;
+        content: "";
+        height: 3px;
+        width: 100px;
+        background-color: #ffb716;
+      }
+
+      .company .company-body {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        gap: 30px;
+      }
+
+      .company .company-body .company-list {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+      }
+
+      .company .company-body .company-list .company-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 30px;
+        padding: 50px;
+        -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+      }
+
+      .company .company-body .company-list .company-item .company-img {
+        max-height: 70px;
+      }
+
+      .company .company-body .company-list .company-item .company-slogan {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: #151515;
+        text-transform: capitalize;
+        -webkit-transition: all 1s;
+        transition: all 1s;
+      }
+
+      .company .company-body .company-list .company-item .company-description {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        color: #999999;
+      }
+
+      .company .company-body .company-list .company-item:hover .company-slogan {
+        color: #ffb716;
+      }
+
+      .company .company-body .company-video {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        max-width: 360px;
+        max-height: 600px;
+        position: relative;
+      }
+
+      .company .company-body .company-video .video-img {
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+
+      .company .company-body .company-video .video-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+      .company .company-body .company-video .video-play .play-img {
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+      }
+
+      .company .company-body .company-video .video-play:hover .play-img {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="company">
+      <div class="company-heading">
+        <h2 class="company-title">Our company</h2>
+        <span class="company-subtitle"
+          >Developing our people, growing our business</span
+        >
+      </div>
+      <div class="company-body">
+        <div class="company-list">
+          <a class="company-item" href="">
+            <img class="company-img" src="./images/company-1.png" alt="" />
+            <h3 class="company-slogan">Professional team</h3>
+            <p class="company-description">
+              Nemo enim ipsam voluptaem quia voluptasd aspernatur.
+            </p>
+          </a>
+          <a class="company-item" href="">
+            <img class="company-img" src="./images/company-2.png" alt="" />
+            <h3 class="company-slogan">Smart services</h3>
+            <p class="company-description">
+              Nemo enim ipsam voluptaem quia voluptasd aspernatur.
+            </p>
+          </a>
+          <a class="company-item" href="">
+            <img class="company-img" src="./images/company-3.png" alt="" />
+            <h3 class="company-slogan">Smart work</h3>
+            <p class="company-description">
+              Nemo enim ipsam voluptaem quia voluptasd aspernatur.
+            </p>
+          </a>
+          <a class="company-item" href="">
+            <img class="company-img" src="./images/company-4.png" alt="" />
+            <h3 class="company-slogan">Great support</h3>
+            <p class="company-description">
+              Nemo enim ipsam voluptaem quia voluptasd aspernatur.
+            </p>
+          </a>
+        </div>
+        <div class="company-video">
+          <img class="video-img" src="./images/company-video.png" alt="" />
+          <a class="video-play" href="">
+            <img class="play-img" src="./images/company-play.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Oswald:wght@700&display=swap");
+      .projects {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 80px;
+        width: 1170px;
+        margin: 0 auto;
+      }
+
+      .projects .projects-heading {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .projects .projects-heading .projects-title {
+        font-family: "Oswald", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: #151515;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .projects .projects-heading .projects-subtitle {
+        position: relative;
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        color: #999999;
+        text-transform: uppercase;
+        padding-bottom: 8px;
+      }
+
+      .projects .projects-heading .projects-subtitle::before {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        height: 1px;
+        width: 200px;
+        background-color: #999999;
+      }
+
+      .projects .projects-heading .projects-subtitle::after {
+        position: absolute;
+        left: 0;
+        bottom: -1.5px;
+        content: "";
+        height: 3px;
+        width: 100px;
+        background-color: #ffb716;
+      }
+
+      .projects .projects-list {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 30px;
+      }
+
+      .projects .projects-list .project-item {
+        padding-top: 100%;
+        position: relative;
+      }
+
+      .projects .projects-list .project-item .project-name {
+        position: absolute;
+        left: 25px;
+        bottom: 25px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: #ffffff;
+        margin: 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #999999;
+        width: 200px;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        z-index: 2;
+      }
+
+      .projects .projects-list .project-item .project-name::after {
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        content: "";
+        height: 3px;
+        width: 50%;
+        background-color: #ffb716;
+      }
+
+      .projects .projects-list .project-item .project-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+      }
+
+      .projects .projects-list .project-item:hover .project-name {
+        -webkit-transform: rotateX(90deg);
+        transform: rotateX(90deg);
+        opacity: 0;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="projects">
+      <div class="projects-heading">
+        <h2 class="projects-title">Our projects</h2>
+        <span class="projects-subtitle">Always dedicated and devoted</span>
+      </div>
+      <div class="projects-list">
+        <a class="project-item" href="">
+          <h3 class="project-name">Glass house</h3>
+          <img class="project-img" src="./images/project-1.jpg" alt="" />
+        </a>
+        <a class="project-item" href="">
+          <h3 class="project-name">Bridge</h3>
+          <img class="project-img" src="./images/project-2.jpg" alt="" />
+        </a>
+        <a class="project-item" href="">
+          <h3 class="project-name">Museum</h3>
+          <img class="project-img" src="./images/project-3.jpg" alt="" />
+        </a>
+        <a class="project-item" href="">
+          <h3 class="project-name">Street</h3>
+          <img class="project-img" src="./images/project-4.jpg" alt="" />
+        </a>
+        <a class="project-item" href="">
+          <h3 class="project-name">Building</h3>
+          <img class="project-img" src="./images/project-5.jpg" alt="" />
+        </a>
+        <a class="project-item" href="">
+          <h3 class="project-name">Stadium</h3>
+          <img class="project-img" src="./images/project-6.jpg" alt="" />
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

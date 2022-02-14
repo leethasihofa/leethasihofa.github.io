@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/7732369a3d.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Oswald:wght@400&display=swap");
+      body {
+        background-image: url(./images/background.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 2000px;
+      }
+
+      .header {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .header .header-top {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .header .header-top .header-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 1170px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .header .header-top .header-container .header-logo {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+
+      .header .header-top .header-container .header-logo .logo-img {
+        max-width: 200px;
+      }
+
+      .header .header-top .header-container .header-info {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      .header .header-top .header-container .header-info .info-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 20px;
+        padding: 25px 30px;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .header .header-top .header-container .header-info .info-item .info-icon {
+        font-size: 32px;
+        color: #ffb716;
+      }
+
+      .header .header-top .header-container .header-info .info-item .info-text {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .header
+        .header-top
+        .header-container
+        .header-info
+        .info-item
+        .info-text
+        .text-item {
+        font-family: "Montserrat", sans-serif;
+        color: #d6d6d6;
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      .header
+        .header-top
+        .header-container
+        .header-info
+        .info-item
+        .info-button {
+        padding: 15px 45px;
+        background-color: #ffb716;
+        font-family: "Montserrat", sans-serif;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .header
+        .header-top
+        .header-container
+        .header-info
+        .info-item
+        .info-button
+        .info-text {
+        position: relative;
+        z-index: 2;
+      }
+
+      .header
+        .header-top
+        .header-container
+        .header-info
+        .info-item
+        .info-button
+        .info-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background-color: #151515;
+        z-index: -1;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .header
+        .header-top
+        .header-container
+        .header-info
+        .info-item
+        .info-button:hover
+        .info-background {
+        z-index: 1;
+        width: 100%;
+      }
+
+      .header .header-bottom {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .header .header-bottom .header-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 1170px;
+      }
+
+      .header .header-bottom .header-container .header-menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .header .header-bottom .header-container .header-menu .menu-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-menu
+        .menu-item
+        .menu-link {
+        font-family: "Oswald", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: #ffffff;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 18px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-menu
+        .menu-item
+        .menu-link:hover {
+        color: #ffb716;
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-menu
+        .menu-item
+        .purchase-link {
+        color: #ffb716;
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-menu
+        .menu-item
+        .sub-menu {
+        position: absolute;
+        top: 100%;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+        list-style-type: none;
+        margin: 0;
+        padding: 10px 18px;
+        background-color: #151515;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 190px;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-menu
+        .menu-item
+        .sub-menu
+        .sub-menu-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 7px 0;
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-menu
+        .menu-item
+        .sub-menu
+        .sub-menu-item
+        .sub-menu-link {
+        width: 100%;
+        font-family: "Oswald", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #ffffff;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 5px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-menu
+        .menu-item
+        .sub-menu
+        .sub-menu-item
+        .sub-menu-link:hover {
+        color: #ffb716;
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-menu
+        .menu-item:hover
+        .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-menu
+        .menu-item:first-child
+        .menu-link {
+        padding-left: 0;
+        color: #ffb716;
+      }
+
+      .header .header-bottom .header-container .header-action {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+
+      .header .header-bottom .header-container .header-action .header-search,
+      .header .header-bottom .header-container .header-action .header-sidebar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 0 20px;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-search
+        .search-open-button,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-search
+        .sidebar-open-button,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-sidebar
+        .search-open-button,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-sidebar
+        .sidebar-open-button {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-search
+        .search-open-button
+        .search-open-icon,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-search
+        .search-open-button
+        .sidebar-open-icon,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-search
+        .sidebar-open-button
+        .search-open-icon,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-search
+        .sidebar-open-button
+        .sidebar-open-icon,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-sidebar
+        .search-open-button
+        .search-open-icon,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-sidebar
+        .search-open-button
+        .sidebar-open-icon,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-sidebar
+        .sidebar-open-button
+        .search-open-icon,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-sidebar
+        .sidebar-open-button
+        .sidebar-open-icon {
+        font-size: 22px;
+        color: #ffffff;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-search
+        .search-open-button:hover
+        .search-open-icon,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-search
+        .sidebar-open-button:hover
+        .sidebar-open-icon,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-sidebar
+        .search-open-button:hover
+        .search-open-icon,
+      .header
+        .header-bottom
+        .header-container
+        .header-action
+        .header-sidebar
+        .sidebar-open-button:hover
+        .sidebar-open-icon {
+        color: #ffb716;
+      }
+
+      .search-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background-color: rgba(13, 25, 31, 0.95);
+        z-index: 3;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .search-modal .search-close-button {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 40px;
+        right: 50px;
+      }
+
+      .search-modal .search-close-button .search-close-icon {
+        font-size: 30px;
+        color: white;
+      }
+
+      .search-modal .search-close-button:hover .search-close-icon {
+        opacity: 0.8;
+      }
+
+      .search-modal .search-form {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      .search-modal .search-form .search-input {
+        font-size: 32px;
+        color: white;
+        background-color: transparent;
+        padding: 30px 30px 30px 0;
+        border: none;
+        outline: none;
+        width: 500px;
+      }
+
+      .search-modal .search-form .search-button {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+      }
+
+      .search-modal .search-form .search-button .search-icon {
+        font-size: 21px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .sidebar-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(13, 25, 31, 0.7);
+        z-index: 3;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .sidebar-modal .sidebar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 60px;
+        padding: 40px 40px 100px 40px;
+        background-color: #202020;
+        overflow-y: scroll;
+      }
+
+      .sidebar-modal .sidebar .sidebar-close-button {
+        -ms-flex-item-align: end;
+        align-self: flex-end;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+      }
+
+      .sidebar-modal .sidebar .sidebar-close-button .sidebar-close-icon {
+        font-size: 25px;
+        color: white;
+      }
+
+      .sidebar-modal .sidebar .sidebar-close-button:hover .sidebar-close-icon {
+        opacity: 0.8;
+      }
+
+      .sidebar-modal .sidebar .sidebar-logo {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+
+      .sidebar-modal .sidebar .sidebar-logo .logo-img {
+        max-width: 200px;
+      }
+
+      .sidebar-modal .sidebar .sidebar-work {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .sidebar-modal .sidebar .sidebar-work .work-heading {
+        font-family: "Montserrat", sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0;
+        color: #ffffff;
+        text-transform: capitalize;
+      }
+
+      .sidebar-modal .sidebar .sidebar-work .work-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .sidebar-modal .sidebar .sidebar-work .work-list .work-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+      }
+
+      .sidebar-modal .sidebar .sidebar-work .work-list .work-item .work-title {
+        position: absolute;
+        left: 25px;
+        bottom: 25px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: #ffffff;
+        margin: 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #999999;
+        width: 200px;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+      }
+
+      .sidebar-modal
+        .sidebar
+        .sidebar-work
+        .work-list
+        .work-item
+        .work-title::after {
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        content: "";
+        height: 3px;
+        width: 50%;
+        background-color: #ffb716;
+      }
+
+      .sidebar-modal .sidebar .sidebar-work .work-list .work-item .work-img {
+        max-width: 379px;
+        max-height: 379px;
+      }
+
+      .sidebar-modal
+        .sidebar
+        .sidebar-work
+        .work-list
+        .work-item:hover
+        .work-title {
+        -webkit-transform: rotateX(90deg);
+        transform: rotateX(90deg);
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .sidebar-modal .sidebar .sidebar-social {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .sidebar-modal .sidebar .sidebar-social .social-heading {
+        font-family: "Montserrat", sans-serif;
+        font-size: 22px;
+        margin: 0;
+        color: #ffffff;
+        text-transform: capitalize;
+      }
+
+      .sidebar-modal .sidebar .sidebar-social .social-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .sidebar-modal .sidebar .sidebar-social .social-list .social-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #ffffff;
+      }
+
+      .sidebar-modal
+        .sidebar
+        .sidebar-social
+        .social-list
+        .social-item
+        .social-icon {
+        color: #252525;
+      }
+
+      .sidebar-modal
+        .sidebar
+        .sidebar-social
+        .social-list
+        .social-item:hover
+        .social-icon {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-top">
+        <div class="header-container">
+          <a class="header-logo" href="">
+            <img class="logo-img" src="./images/logo.png" alt="" />
+          </a>
+          <div class="header-info">
+            <div class="info-item">
+              <i class="info-icon fa-regular fa-clock"></i>
+              <div class="info-text">
+                <span class="text-item">Mon - Fri 09:00 - 19:00</span>
+                <span class="text-item">Sat and Sun - CLOSED</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="info-icon fa-solid fa-phone"></i>
+              <div class="info-text">
+                <span class="text-item">Call Us: +07 554 332 322</span>
+                <span class="text-item">contact@example.com</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <a class="info-button" href="">
+                <span class="info-text">RENTAL</span>
+                <span class="info-background"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <div class="header-container">
+          <ul class="header-menu">
+            <li class="menu-item">
+              <a class="menu-link" href="">Home</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="">Products</a>
+              <ul class="sub-menu">
+                <li class="sub-menu-item">
+                  <a class="sub-menu-link" href="">Bridge</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-menu-link" href="">Building</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="">Projects</a>
+              <ul class="sub-menu">
+                <li class="sub-menu-item">
+                  <a class="sub-menu-link" href="">Bridge</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-menu-link" href="">Building</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="">Careers</a>
+              <ul class="sub-menu">
+                <li class="sub-menu-item">
+                  <a class="sub-menu-link" href="">Bridge</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-menu-link" href="">Building</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="">Company</a>
+              <ul class="sub-menu">
+                <li class="sub-menu-item">
+                  <a class="sub-menu-link" href="">Bridge</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-menu-link" href="">Building</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="">Where we are</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link purchase-link" href="">Purchase</a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" href="">Press Releases</a>
+            </li>
+          </ul>
+          <div class="header-action">
+            <div class="header-search">
+              <button class="search-open-button">
+                <i class="search-open-icon fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <div class="header-sidebar">
+              <button class="sidebar-open-button">
+                <i class="sidebar-open-icon fa-solid fa-bars"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="search-modal">
+      <button class="search-close-button">
+        <i class="search-close-icon fa-regular fa-circle-xmark"></i>
+      </button>
+      <form class="search-form" action="">
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Enter search term..."
+        />
+        <button class="search-button" type="submit">
+          <i class="search-icon fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+    <div class="sidebar-modal">
+      <div class="sidebar">
+        <button class="sidebar-close-button">
+          <i class="sidebar-close-icon fa-regular fa-circle-xmark"></i>
+        </button>
+        <a class="sidebar-logo" href="">
+          <img class="logo-img" src="./images/logo.png" alt="" />
+        </a>
+        <div class="sidebar-work">
+          <h2 class="work-heading">Zidex works</h2>
+          <div class="work-list">
+            <a class="work-item" href="">
+              <h3 class="work-title">Brigde</h3>
+              <img class="work-img" src="./images/sidebar-image-1.jpg" alt="" />
+            </a>
+            <a class="work-item" href="">
+              <h3 class="work-title">Building</h3>
+              <img class="work-img" src="./images/sidebar-image-2.jpg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="sidebar-social">
+          <h2 class="social-heading">Reach us online</h2>
+          <div class="social-list">
+            <a class="social-item" href="">
+              <i class="social-icon fa-brands fa-facebook-square"></i>
+            </a>
+            <a class="social-item" href="">
+              <i class="social-icon fa-brands fa-twitter"></i>
+            </a>
+            <a class="social-item" href="">
+              <i class="social-icon fa-brands fa-google-plus-g"></i>
+            </a>
+            <a class="social-item" href="">
+              <i class="social-icon fa-brands fa-linkedin-in"></i>
+            </a>
+            <a class="social-item" href="">
+              <i class="social-icon fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const html = document.documentElement;
+      const headerBottom = document.querySelector(".header-bottom");
+      window.onscroll = function () {
+        if (html.scrollTop > 99) {
+          headerBottom.setAttribute(
+            "style",
+            "position: fixed; top: 0; left: 0; background-color: rgba(21,21,21,0.85)"
+          );
+        } else {
+          headerBottom.removeAttribute("style");
+        }
+      };
+      const searchOpenButton = document.querySelector(".search-open-button");
+      const searchModal = document.querySelector(".search-modal");
+      const searchCloseButton = document.querySelector(".search-close-button");
+      searchOpenButton.onclick = () => {
+        searchModal.setAttribute("style", "opacity: 1; visibility: visible;");
+      };
+      searchCloseButton.onclick = () => {
+        searchModal.removeAttribute("style");
+      };
+      const sidebarOpenButton = document.querySelector(".sidebar-open-button");
+      const sidebarModal = document.querySelector(".sidebar-modal");
+      const sidebarCloseButton = document.querySelector(
+        ".sidebar-close-button"
+      );
+      sidebarOpenButton.onclick = () => {
+        sidebarModal.setAttribute("style", "opacity: 1; visibility: visible;");
+      };
+      sidebarCloseButton.onclick = () => {
+        sidebarModal.removeAttribute("style");
+      };
+    </script>
+  </body>
+</html>
